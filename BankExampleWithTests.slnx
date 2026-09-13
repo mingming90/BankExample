@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Parasoft.Dottest.Examples.Bank.Tests.MSTest/Parasoft.Dottest.Examples.Bank.Tests.MSTest.csproj" Id="d5d4f175-f587-4de5-9703-a2b706dc2368" />
+  <Project Path="Parasoft.Dottest.Examples.Bank.Tests.NUnit/Parasoft.Dottest.Examples.Bank.Tests.NUnit.csproj" Id="e6d77190-c2bf-4ea0-9877-5cb41b9c56f5" />
+  <Project Path="Parasoft.Dottest.Examples.Bank.Tests.xUnit/Parasoft.Dottest.Examples.Bank.Tests.xUnit.csproj" Id="89fbf8a2-50a5-43fb-ad25-a3dbf4096cf9" />
+  <Project Path="Parasoft.Dottest.Examples.Bank/Parasoft.Dottest.Examples.Bank.csproj" Id="b3911e73-f72b-42db-9c20-54a93c7ea496" />
+</Solution>
