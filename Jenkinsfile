@@ -148,15 +148,7 @@ pipeline {
 
         stage('dotTEST Static Analysis') {
             steps {
-                // Store DTP/license configuration as a Jenkins Secret File
-                // instead of hard-coding credentials in this Jenkinsfile.
-                withCredentials([
-                    file(
-                        credentialsId: 'dottest-ci-settings',
-                        variable: 'DOTTEST_SETTINGS'
-                    )
-                ]) {
-                    bat '''
+                bat '''
                         @echo off
 
                         echo ============================================================
@@ -189,8 +181,49 @@ pipeline {
                         echo.
                         echo dotTEST analysis completed and results were published to DTP.
                     '''
-                }
-            }
+                // Store DTP/license configuration as a Jenkins Secret File
+                // instead of hard-coding credentials in this Jenkinsfile.
+            //     withCredentials([
+            //         file(
+            //             credentialsId: 'dottest-ci-settings',
+            //             variable: 'DOTTEST_SETTINGS'
+            //         )
+            //     ]) {
+            //         bat '''
+            //             @echo off
+
+            //             echo ============================================================
+            //             echo Parasoft dotTEST Static Analysis
+            //             echo Configuration: %DOTTEST_CONFIG%
+            //             echo ============================================================
+
+            //             if exist "%WORKSPACE%\\%DOTTEST_REPORT_DIR%" (
+            //                 rmdir /s /q "%WORKSPACE%\\%DOTTEST_REPORT_DIR%"
+            //             )
+
+            //             mkdir "%WORKSPACE%\\%DOTTEST_REPORT_DIR%"
+
+            //             "%DOTTEST_CLI%" ^
+            //                 -solution "%WORKSPACE%\\%SOLUTION%" ^
+            //                 -solutionConfig "%BUILD_CONFIGURATION%" ^
+            //                 -config "%DOTTEST_CONFIG%" ^
+            //                 -nobuild ^
+            //                 -settings "%DOTTEST_SETTINGS%" ^
+            //                 -report "%WORKSPACE%\\%DOTTEST_REPORT_DIR%" ^
+            //                 -property "build.id=%JOB_NAME%-%BUILD_NUMBER%" ^
+            //                 -property "session.tag=Jenkins-StaticAnalysis" ^
+            //                 -publish
+
+            //             if errorlevel 1 (
+            //                 echo ERROR: dotTEST execution failed.
+            //                 exit /b 1
+            //             )
+
+            //             echo.
+            //             echo dotTEST analysis completed and results were published to DTP.
+            //         '''
+            //     }
+            // }
         }
     }
 
