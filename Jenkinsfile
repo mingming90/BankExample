@@ -36,7 +36,7 @@ pipeline {
         // Examples:
         //   'ATM.sln'
         //   'src\\MyApplication.sln'
-        SOLUTION = 'BankExample\\BankExample.sln'
+        SOLUTION = 'BankExample.slnx'
 
         BUILD_CONFIGURATION = 'Release'
 
