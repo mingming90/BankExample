@@ -41,7 +41,8 @@ pipeline {
         BUILD_CONFIGURATION = 'Release'
 
         // Change this if dotTEST is installed elsewhere.
-        DOTTEST_CLI = 'D:\\Parasoft\\products\\dottest\\2026.1\\dottestcli.exe'
+        //DOTTEST_CLI = 'D:\\Parasoft\\products\\dottest\\2026.1\\dottestcli.exe'
+        DOTTEST_CLI = 'D:\\parasoft\\dottest\\2026.1\\dottestcli.exe'
 
         // Built-in Parasoft static analysis configuration.
         DOTTEST_CONFIG = 'builtin://Recommended Rules'
